@@ -12,7 +12,7 @@ public class HelloWorldController {
     private String greeting;
 
     @GetMapping("/hello/{name}")
-    public String helloWorld(@PathVariable("name") String name){
-        return greeting + " "+ name;
+    public HelloWorldDto helloWorldDto(@PathVariable("name") String name){
+        return new HelloWorldDto(greeting + " "+ name, 1L);
     }
 }
