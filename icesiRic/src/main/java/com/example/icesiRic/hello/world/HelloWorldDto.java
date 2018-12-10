@@ -4,6 +4,7 @@ public class HelloWorldDto {
 
     private String greeting;
     private Long id;
+    private double trm;
 
     public String getGreeting() {
         return greeting;
@@ -21,9 +22,17 @@ public class HelloWorldDto {
         this.id = id;
     }
 
-    public HelloWorldDto(String greeting, Long id) {
+    public double getTrm() {
+        return trm;
+    }
 
+    public void setTrm(double trm) {
+        this.trm = trm;
+    }
+
+    public HelloWorldDto(String greeting, Long id, double trm) {
         this.greeting = greeting;
         this.id = id;
+        this.trm = trm;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.icesiRic.hello.world;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +14,9 @@ public class HelloWorldController {
 
     @GetMapping("/hello/{name}")
     public HelloWorldDto helloWorldDto(@PathVariable("name") String name){
-        return new HelloWorldDto(greeting + " "+ name, 1L);
+        return helloWorldService.getDtoWithTRM(greeting + " " +name);
     }
+
+    @Autowired
+    private HelloWorldService helloWorldService;
 }
